@@ -26,7 +26,7 @@ namespace HandelNieruchomosciami
         {
             services.AddMvc();
 
-            var dbConnectionString = @"Server=(localdb)\mssqllocaldb;Database=MistrzowieDB;Trusted_Connection=True;";
+            var dbConnectionString = @"Server=(localdb)\mssqllocaldb;Database=HandelNieruchomosciamiDB;Trusted_Connection=True;";
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(dbConnectionString));
         }
 
