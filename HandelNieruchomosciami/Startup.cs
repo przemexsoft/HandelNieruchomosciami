@@ -31,6 +31,7 @@ namespace HandelNieruchomosciami
             var dbConnectionString = @"Server=DESKTOP-48704R2;Database=HandelNieruchomosciamiDB;Trusted_Connection=True;";
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(dbConnectionString));
             services.AddScoped<ITransakcjaRepository, TransakcjaRepository>();
+            services.AddScoped<IWlascicielRepository, WlascicielRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

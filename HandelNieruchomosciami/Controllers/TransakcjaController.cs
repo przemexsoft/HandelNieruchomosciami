@@ -10,6 +10,7 @@ namespace HandelNieruchomosciami.Controllers
 {
     [Produces("application/json")]
     [Route("api/Transakcja")]
+
     public class TransakcjaController : Controller
     {
         //warstwa abstrakcji
