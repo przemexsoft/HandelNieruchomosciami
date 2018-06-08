@@ -20,10 +20,11 @@ namespace HandelNieruchomosciami.Controllers
             _wlascicielRepository = wlascicielRepository;
         }
 
-        [HttpGet("action")]
+        [HttpGet("[action]")]
         public IActionResult GetWlasciciels()
         {
-            return new JsonResult(_wlascicielRepository.GetAll());
+            var jsonResult = new JsonResult(_wlascicielRepository.GetAll());
+            return jsonResult;
         }
     }
 }
