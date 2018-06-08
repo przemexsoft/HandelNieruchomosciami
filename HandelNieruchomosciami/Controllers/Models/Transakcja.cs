@@ -20,7 +20,7 @@ namespace HandelNieruchomosciami.Controllers.Models
         public virtual int TransakcjaKontrahentId { get; set; }
         public virtual Kontrahent Kontrahent { get; set; }
 
-        public virtual string TransakcjaNumerUmowy { get; set; }
+        public virtual int TransakcjaUmowaId { get; set; }
         public virtual Umowa Umowa { get; set; }
 
         public virtual int TransakcjaAgentId { get; set; }

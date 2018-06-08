@@ -8,7 +8,7 @@ namespace HandelNieruchomosciami.Controllers.Models
     public class Umowa
     {
         public int UmowaId { get; set; }
-        public string UmowaNumerUmowy { get; set; }
+       
         public DateTime UmowaDataSporzadzeniaUmowy { get; set; }
         public int UmowaKwotaPLN { get; set; }
 

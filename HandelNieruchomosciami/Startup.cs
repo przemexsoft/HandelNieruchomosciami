@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using HandelNieruchomosciami.Controllers.Models.Database;
 using Microsoft.EntityFrameworkCore;
+using HandelNieruchomosciami.Controllers.Models.Interfaces;
+using HandelNieruchomosciami.Controllers.Models.Repositories;
 
 namespace HandelNieruchomosciami
 {
@@ -28,6 +30,7 @@ namespace HandelNieruchomosciami
 
             var dbConnectionString = @"Server=DESKTOP-48704R2;Database=HandelNieruchomosciamiDB;Trusted_Connection=True;";
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(dbConnectionString));
+            services.AddScoped<ITransakcjaRepository, TransakcjaRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

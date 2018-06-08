@@ -99,11 +99,9 @@ namespace HandelNieruchomosciami.Migrations
 
                     b.Property<int>("NieruchomoscWlasciciel");
 
-                    b.Property<int?>("TypZabudowyId");
-
                     b.HasKey("NieruchomoscId");
 
-                    b.HasIndex("TypZabudowyId");
+                    b.HasIndex("NieruchomoscTypZabudowy");
 
                     b.ToTable("Nieruchomoscs");
                 });
@@ -125,14 +123,6 @@ namespace HandelNieruchomosciami.Migrations
                     b.Property<int>("TransakcjaId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("AgentId");
-
-                    b.Property<int?>("KontrahentId");
-
-                    b.Property<int?>("NieruchomoscId");
-
-                    b.Property<int?>("StatusTransakcjiId");
-
                     b.Property<int>("TransakcjaAgentId");
 
                     b.Property<DateTime>("TransakcjaDataUtworzenia");
@@ -143,29 +133,25 @@ namespace HandelNieruchomosciami.Migrations
 
                     b.Property<string>("TransakcjaNumer");
 
-                    b.Property<string>("TransakcjaNumerUmowy");
-
                     b.Property<int>("TransakcjaSprzedawcaId");
 
                     b.Property<int>("TransakcjaStatusTransakcjiId");
 
-                    b.Property<int?>("UmowaId");
-
-                    b.Property<int?>("WlascicielId");
+                    b.Property<int>("TransakcjaUmowaId");
 
                     b.HasKey("TransakcjaId");
 
-                    b.HasIndex("AgentId");
+                    b.HasIndex("TransakcjaAgentId");
 
-                    b.HasIndex("KontrahentId");
+                    b.HasIndex("TransakcjaKontrahentId");
 
-                    b.HasIndex("NieruchomoscId");
+                    b.HasIndex("TransakcjaNieruchomoscId");
 
-                    b.HasIndex("StatusTransakcjiId");
+                    b.HasIndex("TransakcjaStatusTransakcjiId");
 
-                    b.HasIndex("UmowaId");
+                    b.HasIndex("TransakcjaUmowaId");
 
-                    b.HasIndex("WlascicielId");
+                    b.HasIndex("TransakcjaSprzedawcaIdWlascicielId");
 
                     b.ToTable("Transakcjas");
                 });
@@ -187,10 +173,6 @@ namespace HandelNieruchomosciami.Migrations
                     b.Property<int>("UmowaId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("KontrahentId");
-
-                    b.Property<int?>("NieruchomoscId");
-
                     b.Property<DateTime>("UmowaDataSporzadzeniaUmowy");
 
                     b.Property<int>("UmowaKontrahentId");
@@ -199,19 +181,17 @@ namespace HandelNieruchomosciami.Migrations
 
                     b.Property<int>("UmowaNieruchomoscId");
 
-                    b.Property<string>("UmowaNumerUmowy");
-
                     b.Property<int>("UmowaSprzedajacyId");
 
                     b.Property<int?>("WlascicielId");
 
                     b.HasKey("UmowaId");
 
-                    b.HasIndex("KontrahentId");
+                    b.HasIndex("UmowaKontrahentId");
 
-                    b.HasIndex("NieruchomoscId");
+                    b.HasIndex("UmowaNieruchomoscId");
 
-                    b.HasIndex("WlascicielId");
+                    b.HasIndex("UmowaSprzedajacyId");
 
                     b.ToTable("Umowas");
                 });
